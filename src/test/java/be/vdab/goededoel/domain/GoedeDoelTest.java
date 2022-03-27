@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 class GoedeDoelTest {
 	private static final String NAAM = "CliniClowns";
 	private GoedeDoel doel;
@@ -23,6 +25,22 @@ class GoedeDoelTest {
 	void eenNieuweDoelHeeftNogGeenOpbrengst() {
 		assertThat(doel.getOpbrengst()).isZero();
 	}
+
+	@Test
+	void doelenMetDezelfdeNaamZijnGelijk() {
+		assertThat(doel).isEqualTo(new GoedeDoel(NAAM));
+	}
+	@Test
+	void doelenMetVerschillendeNaamZijnVerschillend() {
+		assertThat(doel).isNotEqualTo(new GoedeDoel("WWF"));
+	}
+
+	@Test
+	void doelVerschiltVanEenObjectMetEenAnderType() {
+		assertThat(doel).isNotEqualTo(BigDecimal.ZERO);
+	}
+
+
 
 /*
 	@Test
