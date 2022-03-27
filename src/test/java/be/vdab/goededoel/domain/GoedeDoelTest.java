@@ -24,9 +24,11 @@ class GoedeDoelTest {
 		assertThat(doel.getOpbrengst()).isZero();
 	}
 
+/*
 	@Test
 	void testDieMoetMislukken() {
 		assertThat(doel.getOpbrengst()).isOne();
 	}
+*/
 
 }
